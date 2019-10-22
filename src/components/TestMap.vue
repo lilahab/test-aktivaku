@@ -1,27 +1,20 @@
 <template>
-  <div style="height: 450px; max-width:992px; width:100%;">
-    <GmapMap :center="center" :map-type-id="mapTypeId" :zoom="5">
-      <GmapMarker
-        v-for="(item, index) in markers"
-        :key="index"
-        :position="item.position"
-        @click="center = item.position"
-      />
-    </GmapMap>
-  </div>
+  <div id="mapid"></div>
 </template>
 
 <script>
+import Leaflet from 'leaflet'
+
 export default {
-  data() {
-    return {
-      center: { lat: -3.350235, lng: 111.995865 },
-      mapTypeId: "terrain",
-      markers: [
-        { position: { lat: -0.48585, lng: 117.1466 } },
-        { position: { lat: -6.9127778, lng: 107.6205556 } }
-      ]
-    };
-  }
-};
+    name: 'TestMap',
+    mounted() {
+        var mymap = Leaflet.map('mapid').setView([-6.2117209,106.8196038,17], 11)
+        Leaflet.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'sk.eyJ1Ijoic2FuYWtkYW0iLCJhIjoiY2syMjNweTNiMDU3NzNucGdtMjZzbHdmaSJ9.yljDQJJYRR9Y2JndUJl5Pg'
+        }).addTo(mymap)
+    }
+}
 </script>

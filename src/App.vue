@@ -26,7 +26,6 @@
   <br>
     <Test msg="lorem ipsum dolor sit amet consectetur"/>
   </div>
-
 </template>
 
 <script>

@@ -12,6 +12,7 @@
     "bootstrap-vue": "^2.0.4",
     "chart.js": "^2.8.0",
     "core-js": "^3.1.2",
+    "leaflet": "^1.5.1",
     "semantic-ui-vue": "^0.8.1",
     "vue": "^2.6.10",
     "vue-chartjs": "^3.4.2",
