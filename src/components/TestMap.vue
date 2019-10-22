@@ -15,6 +15,19 @@ export default {
             id: 'mapbox.streets',
             accessToken: 'sk.eyJ1Ijoic2FuYWtkYW0iLCJhIjoiY2syMjNweTNiMDU3NzNucGdtMjZzbHdmaSJ9.yljDQJJYRR9Y2JndUJl5Pg'
         }).addTo(mymap)
-    }
-}
+    });
+
 </script>
+
+<style>
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+
+    #mapid { height: 500px; }
+</style>
