@@ -10,6 +10,7 @@
     <h3> Line Graph</h3>
       <TestGraph />
     <h3>Maps</h3>
+    <br>
       <TestMap />
   </div>
 </template>

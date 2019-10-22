@@ -14,8 +14,25 @@ export default {
             maxZoom: 18,
             id: 'mapbox.streets',
             accessToken: 'sk.eyJ1Ijoic2FuYWtkYW0iLCJhIjoiY2syMjNweTNiMDU3NzNucGdtMjZzbHdmaSJ9.yljDQJJYRR9Y2JndUJl5Pg'
-        }).addTo(mymap)
-    });
+        }).addTo(mymap);
+
+        Leaflet.marker([-6.2117209,106.8196038,17]).addTo(mymap);
+        Leaflet.popup()
+            .setLatLng([-6.2117209,106.8196038,17])
+            .setContent("Halo saya berada di AKTIVAKU")
+            .openOn(mymap);
+        
+        function onMapClick(e) {
+            Leaflet.popup()
+            .setLatLng(e.latlng)
+            .setContent("Koordinat Latitude Longitude:" + e.latlng.toString())
+            .openOn(mymap);
+        }
+
+        mymap.on('click', onMapClick);
+        
+    }
+}
 
 </script>
 
@@ -29,5 +46,5 @@ export default {
         margin-top: 60px;
     }
 
-    #mapid { height: 500px; }
+    #mapid { height: 500px; margin-bottom: 50px;}
 </style>
